@@ -1,4 +1,4 @@
-type HtmlTags = `h${1 | 2 | 3 | 4 | 5 | 6}` | "p" | "div" | "span" | "html" | "body" | "head" | "title"
+type HtmlTags = keyof HTMLElementTagNameMap
 
 type ArrayToString<Arr> =
   Arr extends [infer A, ...infer B] ?
@@ -40,7 +40,8 @@ type demos = Ele<"html",
   Ele<"div",
     [
       Ele<"h2", "Hello World">,
-      Ele<"p", "Hello World, But in P tag.">
+      Ele<"p", "Hello World, But in P tag.">,
+      Ele<"i", "Hello Bold World">
     ]
   >
 >
